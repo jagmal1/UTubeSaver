@@ -27,3 +27,8 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+# Cookies and temp files
+backend/cookies.txt
+backend/temp_test3.mp4
+*.mp4
+*.mp3
