@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build outputs
+dist/
+build/
+frontend/dist/
+
+# Environment files (NEVER commit these)
+.env
+.env.local
+.env.*.local
+backend/.env
+
+# Temp download folder
+backend/temp/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

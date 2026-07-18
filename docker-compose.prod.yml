@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: yt_backend_prod
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    container_name: yt_frontend_prod
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    environment:
+      # This env var is for build time in the Dockerfile if needed, 
+      # but ideally the frontend URL is baked in or configured dynamically.
+      # For a static SPA served by Nginx, env vars are baked at build time usually.
+      - VITE_API_URL=http://localhost:3000/api
